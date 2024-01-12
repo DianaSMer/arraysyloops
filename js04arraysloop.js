@@ -4,6 +4,24 @@ let r = [14, 3.5, 6];
 let sumResistance =  r.reduce((a, b) => a + b, 0);
 console.log(sumResistance)
 
+//Vi que mejor era así, porque tenia que ver que fuera positivo
+
+
+const sumaResis = resistenciaValores => {
+    let sum = 0;
+
+    for (let index = 0; index < resistenciaValores.length; index++){
+        let resistencia = resistenciaValores [index];
+        if (resistencia < 0) {
+            resistencia = resistencia * (-1);
+        }
+        sum = sum + resistencia;
+    }
+    return sum;
+};
+
+console.log(sumaResis([-1, 5, 6, 3]));
+console.log(sumaResis([8, 15, 100]));
 
 //Ejercicio 2
 
@@ -15,6 +33,7 @@ function numDiv (number) {
 let number = 4;
 let totalArray = numDiv (number);
 console.log(totalArray);
+
 
 
 //Ejercicio 3
